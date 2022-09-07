@@ -10,7 +10,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-// PUT YOUR IMPORTS HERE
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Scanner;
 
 public class HiddenSecrets {
     public static void getHiddenSecrets(File file) {
@@ -39,6 +41,11 @@ public class HiddenSecrets {
     }
 
     public static void main(String[] args) {
+        System.out.print("File path to JPEG: ");
+        Scanner scanner = new Scanner(System.in);
+        Path filePath = Paths.get(scanner.nextLine());
+
+        getHiddenSecrets(filePath.toFile());
         // Put your code to request a file path,
         // read in a string from System.in,
         // convert that string into A Path type using Paths class,
